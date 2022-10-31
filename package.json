@@ -9,10 +9,16 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@web/rollup-plugin-html": "^1.11.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1",
     "unplugin-obj": "^0.1.2",
     "vite": "^3.1.0"
   },
   "dependencies": {
-    "three": "^0.145.0"
+    "flowbite": "^1.5.3",
+    "three": "^0.145.0",
+    "tw-elements": "^1.0.0-alpha12"
   }
 }

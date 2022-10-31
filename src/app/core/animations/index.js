@@ -1,32 +1,32 @@
-// import { scene, camera, renderer } from '../resources';
-import { DragControls } from 'Utilities/dragControls';
-import { camera, cameraPositionControl } from '../camera';
-import { renderer } from '../renderer';
-import { cube } from '../resources/geometries/cube';
-import { light } from '../resources/light';
-import { scene } from '../scene';
-import { loader } from '../resources/geometries/obj_files/desk';
-import '../../../assets/desk.obj';
+import { createCamara } from '../camera';
+import { createScene } from '../scene';
+import { createRenderer } from '../renderer';
 
-loader.load('src/assets/desk.obj', function (object) {
-  console.log('JVC', object);
-  object.rotateX(0.46);
-  object.position.set(2, 0, 0);
-  light.target = object;
-  scene.add(object);
-});
+import { configCamera } from './configCamera';
+import { configScene } from './configScene';
+
+import { OrbitControls } from '../../../utilities/orbitControls';
+
+export function initializeCoreElements() {
+  const { renderer, scene, camera, cameraControl } = window['threeJsCore'];
+  threeJsCore.renderer = createRenderer('container');
+
+  threeJsCore.scene = createScene();
+  configScene(threeJsCore.scene);
+
+  threeJsCore.camera = createCamara();
+  threeJsCore.cameraControl = new OrbitControls(threeJsCore.camera, threeJsCore.renderer.domElement);
+  configCamera(threeJsCore.camera, threeJsCore.cameraControl);
+
+}
+
 
 export function animate() {
+  const { renderer, scene, camera, cameraControl } = window['threeJsCore'];
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 
-  // cube animations
-  cube.rotateX(0.01);
-  // cube.rotateY(0.01);
-  // cube.rotateZ(0.01);
-
   // camera animations
-  // console.log(camera.position);
-  cameraPositionControl.update();
+  cameraControl.update();
 
 }

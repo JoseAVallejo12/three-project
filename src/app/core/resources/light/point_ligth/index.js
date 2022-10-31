@@ -21,17 +21,17 @@ const ligth = {
   }
 }
 
-function getLigth({ color, intensity, distance, decay }) {
-  return new PointLight(color, intensity, distance, decay);
+function createLigth(light) {
+  return new PointLight(light.color, light.intensity, light.distance, light.decay);
 }
 
-const redLigth = getLigth(ligth.red)
+const redLigth = createLigth(ligth.red)
 redLigth.position.set(0, 0, 0);
 
-const blueLigth = getLigth(ligth.blue)
+const blueLigth = createLigth(ligth.blue)
 blueLigth.position.set(6, 6, 6);
 
-const greenLigth = getLigth(ligth.green)
+const greenLigth = createLigth(ligth.green)
 greenLigth.position.set(-6, -6, 2);
 
 export { redLigth, blueLigth, greenLigth }
