@@ -29,10 +29,10 @@ const redLigth = createLigth(ligth.red)
 redLigth.position.set(0, 0, 0);
 
 const blueLigth = createLigth(ligth.blue)
-blueLigth.position.set(6, 6, 6);
+blueLigth.position.set(0, 0, 0);
 
 const greenLigth = createLigth(ligth.green)
-greenLigth.position.set(-6, -6, 2);
+greenLigth.position.set(0, 0, 0);
 
 export { redLigth, blueLigth, greenLigth }
 

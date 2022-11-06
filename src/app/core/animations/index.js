@@ -4,7 +4,7 @@ import { createRenderer } from '../renderer';
 
 import { configCamera } from './configCamera';
 import { configScene } from './configScene';
-import getFieldsetElements from './configLight'
+import getFieldsetElements from './configPointerLight'
 
 import { OrbitControls } from '../../../utilities/orbitControls';
 

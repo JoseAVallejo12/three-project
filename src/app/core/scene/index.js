@@ -4,7 +4,7 @@ import { plane } from '../resources/geometries/plane';
 import { light } from '../resources/light';
 import { blueLigth, greenLigth, redLigth } from '../resources/light/point_ligth';
 
-function createScene(background = 0xe1edea) {
+function createScene(background = 0xfdba8c) {
   const scene = new Scene();
 
   scene.background = new Color(background);

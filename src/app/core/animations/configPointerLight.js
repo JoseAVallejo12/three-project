@@ -46,29 +46,25 @@ function configSelectedLight() {
 
 function configRedLight() {
   lightSettings.red.positions = getPositionsValues();
-
   const { x, y, z } = lightSettings.red.positions
-  setPositions(lightSettings.red.positions)
-  console.log('Config positionss', { x, y, z })
+  setPositions({ x, y, z })
+  redLigth.position.set(x, y, z)
 }
 
 
 function configBlueLight() {
   lightSettings.blue.positions = getPositionsValues();
-
   const { x, y, z } = lightSettings.blue.positions
-  setPositions(lightSettings.blue.positions)
-  console.log('Config positionss', { x, y, z })
+  setPositions({ x, y, z })
+  blueLigth.position.set(x, y, z)
 }
 
 
 function configGreenLight() {
-
   lightSettings.green.positions = getPositionsValues();
-
   const { x, y, z } = lightSettings.green.positions
-  setPositions(lightSettings.green.positions)
-  console.log('Config positionss', { x, y, z })
+  setPositions({ x, y, z })
+  greenLigth.position.set(x, y, z)
 
 }
 
