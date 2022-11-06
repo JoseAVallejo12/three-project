@@ -4,6 +4,7 @@ import { createRenderer } from '../renderer';
 
 import { configCamera } from './configCamera';
 import { configScene } from './configScene';
+import getFieldsetElements from './configLight'
 
 import { OrbitControls } from '../../../utilities/orbitControls';
 
@@ -17,6 +18,8 @@ export function initializeCoreElements() {
   threeJsCore.camera = createCamara();
   threeJsCore.cameraControl = new OrbitControls(threeJsCore.camera, threeJsCore.renderer.domElement);
   configCamera(threeJsCore.camera, threeJsCore.cameraControl);
+
+  getFieldsetElements();
 
 }
 

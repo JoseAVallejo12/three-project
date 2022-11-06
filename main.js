@@ -4,6 +4,7 @@ import 'flowbite';
 import WebGL from './src/utilities/webGl';
 import { animate, initializeCoreElements } from './src/app/core/animations';
 import { htmlRender } from './src/utilities/htmlRender';
+import 'rangeslider.js';
 
 // Global ThreeJs core elements
 window['threeJsCore'] = {
@@ -11,6 +12,7 @@ window['threeJsCore'] = {
   scene: null,
   camera: null,
   cameraControl: null,
+  lights: [],
 }
 
 if (WebGL.isWebGLAvailable()) {

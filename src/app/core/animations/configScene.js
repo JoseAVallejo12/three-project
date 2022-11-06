@@ -1,4 +1,3 @@
-import { cube } from "../resources/geometries/cube";
 import { loader } from "../resources/geometries/obj_files/desk";
 import { plane } from "../resources/geometries/plane";
 import { light } from "../resources/light";
@@ -16,9 +15,17 @@ function load3dElement(scene) {
   });
 }
 
+function safeLight() {
+  window['threeJsCore'].lights = [
+    { color: 'blue', blueLigth },
+    { color: 'green', greenLigth },
+    { color: 'red', redLigth }
+  ];
+}
+
 export function configScene(scene) {
+  safeLight();
   scene.add(plane);
-  scene.add(cube);
   scene.add(light);
   scene.add(greenLigth);
   scene.add(redLigth);
